@@ -18,6 +18,10 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'admin']], function()
         return redirect()->route('location.index');
     });
 
+    Route::get('/dashboard', function() {
+        return redirect()->route('location.index');
+    });
+
     Route::get('/location', function() {
         return view('location.index');
     })->name('location.index');
