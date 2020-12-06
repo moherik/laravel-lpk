@@ -7,20 +7,6 @@
                 <div class="md:flex mt-4 gap-x-9 text-gray-800">
                     <div class="md:w-full">
                         <div class="md:flex md:gap-x-5 mb-4">
-                            <label for="title" class="md:w-3/12 mt-3">Foto: <span class="text-red-500">*</span></label>
-                            <div class="md:flex-1 w-full md:w-6/12">
-                                <input type="file" wire:model="images" multiple class="form-input w-full rounded-md shadow-sm block {{ $errors->has('images') ? 'border-red-500' : '' }}" />
-                                @if(isset($images) && $images != null)
-                                <div class="mt-2 flex gap-5">
-                                    @foreach($images as $key => $image)
-                                        <img src="{{ $image->temporaryUrl() }}" width="120px" class=""/>
-                                    @endforeach
-                                </div>
-                                @endif
-                                @error('images') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
-                            </div>
-                        </div>
-                        <div class="md:flex md:gap-x-5 mb-4">
                             <label for="title" class="md:w-3/12 mt-3">Nama Lokasi: <span class="text-red-500">*</span></label>
                             <div class="md:flex-1 w-full md:w-6/12">
                                 <input type="text" name="title" wire:model="title" class="form-input w-full rounded-md shadow-sm block {{ $errors->has('title') ? 'border-red-500' : '' }}" placeholder="Nama Lokasi"/>
