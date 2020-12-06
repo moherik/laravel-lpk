@@ -23,9 +23,9 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
-
-    Route::apiResource('/locations', LocationController::class);
 });
+
+Route::apiResource('/locations', LocationController::class);
 
 Route::post('/signin', function (Request $request) {
 
