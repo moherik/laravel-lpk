@@ -36,7 +36,8 @@ class LocationController extends Controller
      */
     public function store(StoreLocationRequest $request)
     {
-        $validatedData = $request->validate();
+        $validatedData = $request->validated();
+        $validatedData['user_id'] = auth()->user()->id;
         $store = $this->model->create($validatedData);
         if(!$store)
             return response()->json(['message' => 'Error saving data']);
