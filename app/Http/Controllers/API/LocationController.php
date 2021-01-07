@@ -13,7 +13,8 @@ class LocationController extends Controller
 
     public function __construct(Location $model)
     {
-        $this->model = $model;        
+        $this->model = $model;
+        $this->middleware('auth:sanctum', ['only' => ['store']]);
     }
 
     /**
@@ -38,9 +39,10 @@ class LocationController extends Controller
     {
         $validatedData = $request->validated();
         $validatedData['user_id'] = auth()->user()->id;
+        $validatedData['status'] = "PUBLISH";
         $store = $this->model->create($validatedData);
         if(!$store)
-            return response()->json(['message' => 'Error saving data']);
+            return response()->json(['message' => 'Error saving data'], 500);
 
         return new LocationResource($store);
     }

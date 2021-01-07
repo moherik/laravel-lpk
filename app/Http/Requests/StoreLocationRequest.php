@@ -27,10 +27,9 @@ class StoreLocationRequest extends FormRequest
             'title' => 'required|string|max:100',
             'address' => 'required|string',
             'phone' => 'nullable',
-            'lat_long' => 'string|required',
+            'lat_long' => 'required',
             'description' => 'nullable',
             'website' => 'nullable',
-            'status' => 'required',
             'location_type_id' => 'required',
         ];
     }

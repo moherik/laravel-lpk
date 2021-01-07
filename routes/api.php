@@ -28,23 +28,26 @@ Route::post('/signin', function (Request $request) {
 
     $request->validate([
         'name' => 'required|string',
-        'email' => 'required|email|unique',
+        'email' => 'required|email',
         'avatar' => 'string',
         'google_provider_id' => 'required',
-        'device_id' => 'required',
     ]);
 
-    $user = User::firstOrCreate(
-        [
-            'email' => $request->email,
-            'google_provider_id' => $request->google_provider_id
-        ],
-        [
-            'name' => $request->name,
-            'user_type' => 'USER',
-            'profile_photo_path' => $request->avatar,
-        ]
-    );
-
-    return $user->createToken($request->device_id)->plainTextToken;
+    try {
+        $user = User::firstOrCreate(
+            [
+                'email' => $request->email,
+                'google_provider_id' => $request->google_provider_id
+            ],
+            [
+                'name' => $request->name,
+                'user_type' => 'USER',
+                'profile_photo_path' => $request->avatar,
+            ]
+        );
+    
+        return response()->json(['token' => $user->createToken("login")->plainTextToken], 200);
+    } catch (\Exception $e) {
+        return response()->json(['error' => true, 'message' => $e->getMessage()], 500);
+    }
 });
