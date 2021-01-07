@@ -6,14 +6,14 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('location.index') }}">
-                        <x-jet-application-mark class="block h-9 w-auto" />
+                        <x-jet-application-logo class="block h-9 w-auto" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('location.index') }}" :active="request()->routeIs('location.*')">Lokasi</x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('user') }}" :active="request()->routeIs('user')">Pengguna</x-jet-nav-link>
+                    <!-- <x-jet-nav-link href="{{ route('user') }}" :active="request()->routeIs('user')">Pengguna</x-jet-nav-link> -->
                 </div>
             </div>
 
@@ -117,7 +117,7 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-nav-link href="{{ route('location.index') }}" :active="request()->routeIs('location.*')">Lokasi</x-jet-nav-link>
-            <x-jet-nav-link href="{{ route('user') }}" :active="request()->routeIs('user')">Pengguna</x-jet-nav-link>
+            <!-- <x-jet-nav-link href="{{ route('user') }}" :active="request()->routeIs('user')">Pengguna</x-jet-nav-link> -->
         </div>
 
         <!-- Responsive Settings Options -->
