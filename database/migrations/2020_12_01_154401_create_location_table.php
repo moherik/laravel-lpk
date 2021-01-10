@@ -31,7 +31,7 @@ class CreateLocationTable extends Migration
             $table->text('description')->nullable();
             $table->string('website')->nullable();
             $table->boolean('is_verif')->default(0);
-            $table->enum('status', ['DRAFT', 'PUBLISH'])->default('DRAFT');
+            $table->enum('status', ['DRAFT', 'PUBLISH'])->default('PUBLISH');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('location_type_id')->nullable()->constrained('location_types');
             $table->timestamps();

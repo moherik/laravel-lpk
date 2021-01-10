@@ -12,8 +12,9 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('location.index') }}" :active="request()->routeIs('location.*')">Lokasi</x-jet-nav-link>
-                    <!-- <x-jet-nav-link href="{{ route('user') }}" :active="request()->routeIs('user')">Pengguna</x-jet-nav-link> -->
+                    <x-jet-nav-link href="{{ route('location.index') }}" :active="request()->routeIs('location.index')">
+                        {{ __('Lokasi') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
 
@@ -116,8 +117,9 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-nav-link href="{{ route('location.index') }}" :active="request()->routeIs('location.*')">Lokasi</x-jet-nav-link>
-            <!-- <x-jet-nav-link href="{{ route('user') }}" :active="request()->routeIs('user')">Pengguna</x-jet-nav-link> -->
+            <x-jet-responsive-nav-link href="{{ route('location.index') }}" :active="request()->routeIs('location.index')">
+                {{ __('Lokasi') }}
+            </x-jet-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->

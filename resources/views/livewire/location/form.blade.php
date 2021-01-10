@@ -64,18 +64,6 @@
                                 @error('location_type_id') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                             </div>
                         </div>
-                        <div class="md:flex md:gap-x-5 mb-4">
-                            <label for="status" class="md:w-3/12 mt-3">Status: <span class="text-red-500">*</span></label>
-                            <div class="md:flex-1 w-full md:w-6/12">
-                                <select name="status" wire:model="status" class="form-input w-full rounded-md shadow-sm {{ $errors->has('status') ? 'border-red-500' : '' }}">
-                                    <option value="">Pilih Status Post</option>
-                                    <option value="DRAFT">Draft</option>
-                                    <option value="PUBLISH">Publish</option>
-                                </select>
-                                @error('status') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
-                            </div>
-                        </div>
-
                         <div class="mt-6 mb-4 text-right">
                             <a href="{{ route('location.index') }}" class="inline-flex items-center px-4 py-2 bg-cool-gray-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-cool-gray-800 active:hover:bg-cool-gray-800 focus:outline-none focus:border-cool-gray-800 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150 ml-auto">Batal</a>
                             <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150 ml-auto">

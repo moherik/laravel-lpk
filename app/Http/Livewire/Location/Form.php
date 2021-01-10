@@ -20,7 +20,6 @@ class Form extends Component
     public $lat_long;
     public $description;
     public $website;
-    public $status;
     public $location_type_id;
 
     protected $rules = [
@@ -31,7 +30,6 @@ class Form extends Component
         'lat_long' => 'required',
         'description' => 'nullable',
         'website' => 'nullable',
-        'status' => 'required',
         'location_type_id' => 'required',
     ];
 
@@ -51,7 +49,6 @@ class Form extends Component
         'lat_long' => 'Latitude Longitude', 
         'description' => 'Deskripsi', 
         'website' => 'Website', 
-        'status' => 'Status',
         'location_type_id' => 'Tipe lokasi',
     ];
 
@@ -114,7 +111,6 @@ class Form extends Component
         $this->lat_long = $location->lat_long;
         $this->description = $location->description;
         $this->website = $location->website;
-        $this->status = $location->status;
         $this->location_type_id = $location->type->id ?? null;
     }
 
