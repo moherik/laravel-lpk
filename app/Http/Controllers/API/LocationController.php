@@ -39,7 +39,6 @@ class LocationController extends Controller
     {
         $validatedData = $request->validated();
         $validatedData['user_id'] = auth()->user()->id;
-        $validatedData['status'] = "PUBLISH";
         $store = $this->model->create($validatedData);
         if(!$store)
             return response()->json(['message' => 'Error saving data'], 500);

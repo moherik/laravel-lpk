@@ -23,7 +23,6 @@ class LocationResource extends JsonResource
             'phone' => $this->phone,
             'wesite' => $this->website,
             'location_type' => $this->type->title,
-            'status' => $this->status,
             'created_at' => $this->created_at->format('h:i:s d-m-Y'),
         ];
     }
