@@ -22,7 +22,8 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->text('profile_photo_path')->nullable();
-            $table->enum('user_type', ['ADMIN','USER'])->default('ADMIN');
+            $table->enum('user_type', ['ADMIN','USER'])->default('USER');
+            $table->string('google_provider_id')->nullable();
             $table->timestamps();
         });
     }
