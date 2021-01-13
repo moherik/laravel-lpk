@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['middleware' => ['auth:sanctum', 'verified', 'admin']], function() {
+Route::group(['middleware' => ['verified', 'admin']], function() {
     Route::get('/', function() {
         return redirect()->route('location.index');
     });
