@@ -20,11 +20,25 @@
                         </div>
                     </div>
 
+                    <!-- Member Name -->
+                    <div class="col-span-6 sm:col-span-4">
+                        <x-jet-label for="name" value="{{ __('Name') }}" />
+                        <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="addTeamMemberForm.name" />
+                        <x-jet-input-error for="name" class="mt-2" />
+                    </div>
+
                     <!-- Member Email -->
                     <div class="col-span-6 sm:col-span-4">
                         <x-jet-label for="email" value="{{ __('Email') }}" />
-                        <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="addTeamMemberForm.email" />
+                        <x-jet-input id="email" type="text" class="mt-1 block w-full" wire:model.defer="addTeamMemberForm.email" />
                         <x-jet-input-error for="email" class="mt-2" />
+                    </div>
+
+                    <!-- Member Password -->
+                    <div class="col-span-6 sm:col-span-4">
+                        <x-jet-label for="password" value="{{ __('Password') }}" />
+                        <x-jet-input id="password" type="password" class="mt-1 block w-full" wire:model.defer="addTeamMemberForm.password" />
+                        <x-jet-input-error for="password" class="mt-2" />
                     </div>
 
                     <!-- Role -->

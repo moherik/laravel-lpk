@@ -1,5 +1,6 @@
 <x-app-layout>
-  <x-slot name="header">
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col">
           <h2 class="font-semibold text-xl text-cool-gray-800 leading-tight">{{ $title }}</h2>
           <div class="flex text-sm mt-2 text-gray-600 leading-tight">
@@ -8,7 +9,8 @@
             <p>{{ $title }}</p>
           </div>
       </div>
-  </x-slot>
+    </div>
+  </header>
 
   <div class="py-9">
     <livewire:location.form :editId="$editId ?? null"/>
