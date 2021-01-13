@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['middleware' => ['verified', 'admin']], function() {
+Route::group(['middleware' => ['admin']], function() {
     Route::get('/', function() {
         return redirect()->route('location.index');
     });
