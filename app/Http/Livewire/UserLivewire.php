@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Livewire\WithPagination;
 
@@ -38,6 +39,7 @@ class UserLivewire extends Component
     {
         $data = $this->validate();
         $data['user_type'] = 'ADMIN';
+        $data['email_verified_at'] = Carbon::now();
         $data['password'] = Hash::make($this->password);
         
         if($store = User::create($data)) {
