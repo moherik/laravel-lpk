@@ -23,6 +23,7 @@ class AdminSeeder extends Seeder
                 'name' => 'Developer',
                 'email' => 'dev@mail.com',
                 'password' => Hash::make('dev'),
+                'email_verified_at' => Carbon::now(),
                 'user_type' => 'ADMIN'
             ]), function (User $user) {
                 $user->ownedTeams()->save(Team::forceCreate([
