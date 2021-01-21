@@ -40,7 +40,7 @@ class Show extends Component
 
     public function getLocationTypesProperty()
     {
-        return LocationType::orderBy('title', 'ASC')->get();
+        return LocationType::orderBy('id', 'ASC')->get();
     }
 
     public function render()

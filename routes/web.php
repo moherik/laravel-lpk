@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\AdminLivewire;
 use App\Http\Livewire\UserLivewire;
 use Illuminate\Support\Facades\Route;
 
@@ -36,4 +37,5 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'admin']], function()
     })->name('location.edit');
 
     Route::get('/user', UserLivewire::class)->name('user');
+    Route::get('/admin', AdminLivewire::class)->name('admin');
 });

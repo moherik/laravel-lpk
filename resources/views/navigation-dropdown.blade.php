@@ -16,6 +16,9 @@
                         {{ __('Lokasi') }}
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('user') }}" :active="request()->routeIs('user')">
+                        {{ __('User') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('admin') }}" :active="request()->routeIs('admin')">
                         {{ __('Admin') }}
                     </x-jet-nav-link>
                 </div>
@@ -124,6 +127,9 @@
                 {{ __('Lokasi') }}
             </x-jet-responsive-nav-link>
             <x-jet-responsive-nav-link href="{{ route('user') }}" :active="request()->routeIs('user')">
+                {{ __('User') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('admin') }}" :active="request()->routeIs('admin')">
                 {{ __('Admin') }}
             </x-jet-responsive-nav-link>
         </div>

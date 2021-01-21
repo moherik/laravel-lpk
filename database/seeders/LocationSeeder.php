@@ -32,6 +32,34 @@ class LocationSeeder extends Seeder
                 'description' => 'deskripsi disini',
                 'user_id' => 1,
                 'created_at' => Carbon::now(),
+            ],
+            [
+                'title' => 'Puskesmas',
+                'slug' => Str::slug('Puskesmas'),
+                'description' => 'deskripsi disini',
+                'user_id' => 1,
+                'created_at' => Carbon::now(),
+            ],
+            [
+                'title' => 'Klinik',
+                'slug' => Str::slug('Klinik'),
+                'description' => 'deskripsi disini',
+                'user_id' => 1,
+                'created_at' => Carbon::now(),
+            ],
+            [
+                'title' => 'Praktek Dokter',
+                'slug' => Str::slug('Praktek Dokter'),
+                'description' => 'deskripsi disini',
+                'user_id' => 1,
+                'created_at' => Carbon::now(),
+            ],
+            [
+                'title' => 'Praktek Bidan',
+                'slug' => Str::slug('Praktek Bidan'),
+                'description' => 'deskripsi disini',
+                'user_id' => 1,
+                'created_at' => Carbon::now(),
             ]
         ];
 
@@ -73,7 +101,20 @@ class LocationSeeder extends Seeder
                 'user_id' => 1,
                 'location_type_id' => 1,
                 'created_at' => Carbon::now(),
+            ],
+            [
+                'title' => 'Klinik Mardika',
+                'address' => 'Kembangbahu',
+                'phone' => '+62322321255',
+                'lat_long' => '-7.468098470354285, 112.22876843944812',
+                'website' => null,
+                'is_verif' => 1,
+                'status' => 'PUBLISH',
+                'user_id' => 2,
+                'location_type_id' => 2,
+                'created_at' => Carbon::now(),
             ]
+
         ];
 
         Location::insert($locations);
