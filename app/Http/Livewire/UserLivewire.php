@@ -17,7 +17,7 @@ class UserLivewire extends Component
 
     public function getUsersProperty()
     {
-        return User::where('user_type', strtoupper($this->type))->orderBy('created_at', 'desc')->paginate(10);
+        return User::where('user_type', strtoupper($this->type))->whereHas('locations')->orderBy('created_at', 'desc')->paginate(10);
     }
 
     public function render()
